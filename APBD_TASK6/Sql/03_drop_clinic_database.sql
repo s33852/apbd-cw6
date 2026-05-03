@@ -1,12 +1,11 @@
-USE master;
+USE ClinicAdoNet;
 GO
 
-IF DB_ID(N'ClinicAdoNet') IS NOT NULL
-BEGIN
-    ALTER DATABASE ClinicAdoNet SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-    DROP DATABASE ClinicAdoNet;
-END;
+DROP TABLE IF EXISTS dbo.Appointments;
+DROP TABLE IF EXISTS dbo.Doctors;
+DROP TABLE IF EXISTS dbo.Patients;
+DROP TABLE IF EXISTS dbo.Specializations;
 GO
 
-SELECT N'Database ClinicAdoNet was dropped if it existed.' AS Message;
+SELECT N'ClinicAdoNet tables were dropped.' AS Message;
 GO
